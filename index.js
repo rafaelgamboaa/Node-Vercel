@@ -1,7 +1,7 @@
 const express = requite('express')
 const app = express()
 
-app.get('*', (request, response) => {
+app.get('/', (request, response) => {
     response.send( {message: 'app funcionando en el puerto 3000'} )
 })
 
