@@ -11,6 +11,8 @@
             "src": "/(.*)",
             "dest": "/"
         }
-    ]
-
+    ],
+    "env": {
+        "MONGODB_URI": "mongodb+srv://rafaelgamboa:c.ronaldo@almuerzi.8x8rbsn.mongodb.net/?retryWrites=true&w=majority"
+    }
 }
