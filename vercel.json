@@ -8,9 +8,7 @@
     ],
     "routes": [
         {
-            "src": "/(.*)",
-            "dest": "/"
-        }
+            "src": "/api/(.*)", "dest": "/api/index.js"}
     ],
     "env": {
         "MONGODB_URI": "mongodb+srv://rg:rg@almuerzi.8x8rbsn.mongodb.net/?retryWrites=true&w=majority"
