@@ -6,20 +6,20 @@ router.get('/', (req, res) => {
     Orders
         .find()
         .exec()
-        .then(x => res.status(200).send(x))
+        .then(orders => res.status(200).send(orders))
 })
 
 router.get('/:id', (req, res) => {
     Orders
         .findById(req.params.id)
         .exec()
-        .then(x => res.status(200).send(x))
+        .then(order => res.status(200).send(order))
 })
 
 router.post('/', (req, res) => {
     Orders
         .create(req.body)
-        .then(x => res.status(201).send(x))
+        .then(order => res.status(201).send(order))
 })
 
 router.put('/:id', (req, res) => {

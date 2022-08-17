@@ -22,7 +22,7 @@ mongoose.connect(MONGODB_URI, {
         useUnifiedTopology: true
     })
     .then(() => console.log('DB Connected'))
-    .catch(e => console.log(e))
+    .catch(error => console.log(error))
 
 // Routes
 app.use('/api/meals', meals)
