@@ -6,6 +6,10 @@ const meals = require('./routes/meals')
 const orders = require('./routes/orders')
 const app = express()
 
+// USE ENVIRONMENT VARIABLES
+const PORT = process.env.PORT || 3000
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://fcc-mongodb:mongodb@cluster0.mpo46.mongodb.net/?retryWrites=true&w=majority'
+
 // CORS
 app.use(cors())
 
@@ -13,9 +17,7 @@ app.use(cors())
 app.use(bodyParser.json())
 
 //DB
-const uri = 'mongodb+srv://rg:rg@almuerzi.8x8rbsn.mongodb.net/?retryWrites=true&w=majority'
-
-mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}
+mongoose.connect(MONGODB_URI, {useNewUrlParser: true, useUnifiedTopology: true}
     ).then(() => console.log('DB Connected'))
      .catch(e => console.log(e))
 //
@@ -23,4 +25,4 @@ mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}
 app.use('/api/meals', meals)
 app.use('/api/orders', orders)
 
-app.listen(3000, console.log('app funcionando en el puerto 3000'))
+app.listen(PORT, console.log(`app funcionando en el puerto ${PORT}`))
