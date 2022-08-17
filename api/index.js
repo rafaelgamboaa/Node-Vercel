@@ -28,4 +28,7 @@ mongoose.connect(MONGODB_URI, {
 app.use('/api/meals', meals)
 app.use('/api/orders', orders)
 
+// TODO: Add 404 route
+// TODO: Add swagger docs
+
 app.listen(PORT, console.log(`App funcionando en el puerto ${PORT}`))
