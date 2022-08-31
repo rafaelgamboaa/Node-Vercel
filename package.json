@@ -2,7 +2,7 @@
   "name": "node-vercel",
   "version": "1.0.0",
   "description": "Deploy de Node a Vercel",
-  "main": "index.js",
+  "main": "./api/index.js",
   "scripts": {
     "start": "node ./api/index.js"
   },
