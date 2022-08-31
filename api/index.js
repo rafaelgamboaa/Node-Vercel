@@ -16,7 +16,6 @@ app.use(cors())
 // Use body parse
 app.use(bodyParser.json())
 
-//refactor/improvements
 // Connection Database
 mongoose.connect(MONGODB_URI, {
         useNewUrlParser: true, 
