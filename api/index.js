@@ -13,7 +13,7 @@ app.use(cors())
 app.use(bodyParser.json())
 
 //DB
-const uri = 'mongodb+srv://rg:rg@almuerzi.8x8rbsn.mongodb.net/?retryWrites=true&w=majority'
+const uri = 'mongodb+srv://rg:rg@rafa.eqszqcd.mongodb.net/?retryWrites=true&w=majority'
 
 mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}
     ).then(() => console.log('DB Connected'))
