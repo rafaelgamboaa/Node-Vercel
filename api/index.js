@@ -8,7 +8,7 @@ const app = express()
 
 // Use environment variables
 const PORT = process.env.PORT || 3000
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://fcc-mongodb:mongodb@cluster0.mpo46.mongodb.net/?retryWrites=true&w=majority'
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://rg:rg@rafa.eqszqcd.mongodb.net/?retryWrites=true&w=majority'
 
 // CORS
 app.use(cors())
@@ -16,6 +16,7 @@ app.use(cors())
 // Use body parse
 app.use(bodyParser.json())
 
+//refactor/improvements
 // Connection Database
 mongoose.connect(MONGODB_URI, {
         useNewUrlParser: true, 
