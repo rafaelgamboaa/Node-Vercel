@@ -6,21 +6,30 @@ const meals = require('./routes/meals')
 const orders = require('./routes/orders')
 const app = express()
 
+// Use environment variables
+const PORT = process.env.PORT || 3000
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://rg:rg@rafa.eqszqcd.mongodb.net/?retryWrites=true&w=majority'
+
 // CORS
 app.use(cors())
 
-//BODY-PARSER
+// Use body parse
 app.use(bodyParser.json())
 
-//DB
-const uri = 'mongodb+srv://rg:rg@rafa.eqszqcd.mongodb.net/?retryWrites=true&w=majority'
+//refactor/improvements
+// Connection Database
+mongoose.connect(MONGODB_URI, {
+        useNewUrlParser: true, 
+        useUnifiedTopology: true
+    })
+    .then(() => console.log('DB Connected'))
+    .catch(error => console.log(error))
 
-mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}
-    ).then(() => console.log('DB Connected'))
-     .catch(e => console.log(e))
-//
-
+// Routes
 app.use('/api/meals', meals)
 app.use('/api/orders', orders)
 
-app.listen(3000, console.log('app funcionando en el puerto 3000'))
+// TODO: Add 404 route
+// TODO: Add swagger docs
+
+app.listen(PORT, console.log(`App funcionando en el puerto ${PORT}`))
